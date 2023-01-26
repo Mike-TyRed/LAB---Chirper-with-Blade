@@ -1,5 +1,6 @@
 <?php
 
+//Importamos ChirpController
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,8 +19,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//[1] Creamos la ruta que utilizara el controlador para manejar el backend
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    //Permite el uso unico de los siguientes metodos. 
+    ->only(['index', 'store', /* [9 -> ChirpController] */ 'edit', 'update', /* [11 -> ChirpController] */ 'destroy'])
+    //Agrega el metodo de verificacion de usuario  -> ChirpController
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

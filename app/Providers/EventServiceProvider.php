@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Event;
 class EventServiceProvider extends ServiceProvider
 {
  
+    //Enlazamos el listener al evento para que realice el envio del mensaje
     protected $listen = [
         ChirpCreated::class => [
             SendChirpCreatedNotifications::class,

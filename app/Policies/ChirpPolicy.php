@@ -36,7 +36,7 @@ class ChirpPolicy
  
     public function delete(User $user, Chirp $chirp)
     {
-        //
+        //[13] Permitir que solo los autores del Chirps puedan borrar los propios -> NewChirp.php
         return $this->update($user, $chirp);
     }
  

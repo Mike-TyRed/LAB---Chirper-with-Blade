@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
  
-    //declaramos la relacion de la tabla chirps con la tabla usuarios
+    //[6] declaramos la relacion de la tabla chirps con la tabla usuarios -> ChripController
     public function up()
     {
         Schema::create('chirps', function (Blueprint $table) {

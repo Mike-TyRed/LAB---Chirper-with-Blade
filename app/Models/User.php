@@ -27,6 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    //[4] Creamos la relacion "a muchos" -> Chirp.php
     public function chirps()
     {
         return $this->hasMany(Chirp::class);

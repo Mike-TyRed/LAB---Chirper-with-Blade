@@ -15,6 +15,7 @@ class ChirpCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
  
+    //[15] Modificar constructor -> Chirp.php
     public function __construct(public Chirp $chirp)
     {
         //

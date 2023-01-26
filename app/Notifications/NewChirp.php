@@ -13,6 +13,7 @@ class NewChirp extends Notification
 {
     use Queueable;
  
+    //[14] Modificar constructor
     public function __construct(public Chirp $chirp)
     {
         //
@@ -25,6 +26,7 @@ class NewChirp extends Notification
  
     public function toMail($notifiable)
     {
+        //[14] Reemplazar mensajes ->ChirpCreated.php
         return (new MailMessage)
                     ->subject("New Chirp from {$this->chirp->user->name}")
                     ->greeting("New Chirp from {$this->chirp->user->name}")
